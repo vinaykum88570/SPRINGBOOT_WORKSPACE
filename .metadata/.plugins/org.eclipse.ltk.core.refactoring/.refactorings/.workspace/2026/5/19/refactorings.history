@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;OIBSIP-OnlineReservationSystem&apos;" deleteContents="false" description="Delete resource &apos;OIBSIP-OnlineReservationSystem&apos;" element1="/OIBSIP-OnlineReservationSystem" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1777780579563"/>
+</session>

@@ -1,0 +1,109 @@
+package com.springboot.service;
+
+
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.Date;
+import java.util.Optional;
+import java.util.Scanner;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.springboot.entity.Booking;
+import com.springboot.entity.Train;
+import com.springboot.repository.BookingRepository;
+
+@Service
+public class BookingServices {
+	
+    @Autowired
+    private TrainService trainService;
+    @Autowired
+    private BookingRepository bookingRepository;
+  
+    
+    
+	static Scanner scanner = new Scanner(System.in);
+	
+	
+	// Ticket Booking
+	public String trainBooking(Integer trainID) {
+		
+		// fetch train by id
+		System.out.println(trainID);
+		Train train = trainService.getTrainById(trainID);
+		System.out.println(train);
+		
+		System.out.println("Enter details for Booking");
+		System.out.print("passenger_Name:");
+	    String passenger_Name = scanner.next();
+	    System.out.print("phoneNo:");
+	    String phoneNo = scanner.next();
+	    System.out.print("noOfPassenger:");
+	    int noOfPassenger = scanner.nextInt();
+	       
+		Booking booking = new Booking();
+		booking.setPassenger_Name(passenger_Name);
+		booking.setPhoneNo(phoneNo);
+		booking.setNoOfPassenger(noOfPassenger);
+		booking.setPnr_No(BookingServices.pnrGenerate(passenger_Name, phoneNo));
+		booking.setBooking_Date(new Date());
+		booking.setBooking_Time(BookingServices.currntTime());
+		booking.setTrainName(train.getTrainName());
+		booking.setTrainNumber(train.getTrainNumber());
+		booking.setSource(train.getSource());
+		booking.setDestination(train.getDestination());
+		
+		// Ticket Booked
+		bookingRepository.save(booking);
+		// Update Avaialable Seats
+		trainService.updateAvailableSeat(trainID, noOfPassenger);
+		System.out.println("Booking Complete");
+		
+//		System.out.println(booking.toString());
+		return phoneNo;
+	}
+	
+	// Current Time 
+	public static LocalDateTime currntTime() {
+		LocalDateTime currentTime =
+		        LocalDateTime.now(ZoneId.of("Asia/Kolkata"));
+		return currentTime;	
+	}
+	
+	// Generating PNR Using name and Phone Number
+	 public static String pnrGenerate(String name ,String phoneNo) {
+          byte[] bytes = name.getBytes();
+
+          String str = "";
+
+          for (byte b : bytes) {
+          str = str + b;
+          }
+
+          String namePnr = str.substring(0,5);
+          String phonePnr = phoneNo.substring(0, 5);
+          String trainPnr = phonePnr+namePnr;
+
+
+          return trainPnr;
+	 }
+	 
+	 // View Booking By Id
+	 public void viewBookingById(int id) {
+		 Booking byId = bookingRepository.findById(id).get();
+		 System.out.println(+" = "+byId.getPassenger_Name());
+		 System.out.println(+" = "+byId.getPnr_No());
+		 System.out.println(+" = "+byId.getPhoneNo());
+		 System.out.println(+" = "+byId.getBooking_Date());
+		 System.out.println(+" = "+byId.getBooking_Time());
+		 System.out.println(+" = "+byId.getNoOfPassenger());
+		 System.out.println(+" = "+byId.getTrainName());
+		 System.out.println(+" = "+byId.getTrainNumber());
+		 System.out.println(+" = "+byId.getSource());
+		 System.out.println(+" = "+byId.getDestination());
+	 }
+	 
+	 
+}

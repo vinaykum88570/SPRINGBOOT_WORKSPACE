@@ -1,0 +1,97 @@
+package com.springboot;
+
+import java.util.Date;
+import java.util.Scanner;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+
+import com.springboot.service.BookingServices;
+import com.springboot.service.TrainService;
+import com.springboot.service.UserService;
+
+
+
+@SpringBootApplication
+public class TrainReservationSystemApplication implements CommandLineRunner {
+
+	@Autowired
+	private TrainService trainService;
+	@Autowired
+	private UserService userService;
+	@Autowired
+	private BookingServices bookingServices;
+
+	
+	public static void main(String[] args) {
+		ApplicationContext context = SpringApplication.run(TrainReservationSystemApplication.class, args);
+		
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+       Scanner scanner = new Scanner(System.in);
+       
+       
+       
+       System.out.println("Welcome Online Reservation System ");
+		System.out.println("1] Register");
+		System.out.println("2] Login");
+	   while(true) {
+		   
+			switch(scanner.nextInt()) {
+			
+			case 1: // User Register(Login Credentials)
+				userService.addUser(userService.userDetail());
+				
+			case 2: // Login Credentials	
+				System.out.print("Enter Email:");
+		    	String email = scanner.next();
+		    	System.out.print("Enter Password:");
+		    	String password = scanner.next();
+				String Status = userService.checkLogin(email,password);
+				System.out.println(Status);
+				System.out.println("===================================================");
+				while(true) {
+					System.out.println("1.Search Train: ");
+					System.out.println("2.Check Train Availability: ");
+					System.out.println("3.Book Ticket : ");
+					System.out.println("4.View Booking Details : ");
+					
+							            switch (scanner.nextInt()) {
+							
+							            	case 1: // Search Train 
+							            	trainService.findBySourceAndDestiny();
+							            	break;
+								
+							            	case 2: //Check Train Availability
+							            		trainService.getAllTrains();
+							            		break;
+							            	
+							            	case 3: // Book Ticket
+							            		  System.out.println("Enter Train ID For Booking:");
+							            		  int trainID = scanner.nextInt();
+							            		  bookingServices.trainBooking(trainID);
+							            		break;
+							            		
+							            	case 4: // View booking Details
+							            		System.out.println("Enter Booking ID");
+							            		int bookingID = scanner.nextInt();
+							            		bookingServices.viewBookingById(bookingID);
+							            		break;
+							            		
+							            	case 5:
+							            		System.out.println("Invalid Number ! Enter Again");
+							            		break;
+							            }
+				}       
+				
+						
+			     }
+        }
+		
+	}	
+}

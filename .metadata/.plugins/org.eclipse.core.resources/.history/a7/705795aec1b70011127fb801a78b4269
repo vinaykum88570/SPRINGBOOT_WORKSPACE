@@ -1,0 +1,102 @@
+package com.springboot.service;
+
+import com.springboot.repository.UserRepository;
+import java.util.List;
+import java.util.Optional;
+import java.util.Scanner;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.springboot.entity.Train;
+import com.springboot.repository.TrainRepository;
+
+@Service
+public class TrainService {
+
+	@Autowired
+    private UserRepository userRepository;
+	@Autowired
+    private TrainRepository trainRepository;
+	
+	Scanner scanner = new Scanner(System.in);
+
+    // Create Train
+    public Train addTrain(Train train) {
+        return trainRepository.save(train);
+    }
+
+    // Get all trains
+    public List<Train> getAllTrains() {
+    	List<Train> allTrains = trainRepository.findAll();
+    	for (Train train : allTrains) {
+			System.out.println(train.toString());
+		}
+    	return allTrains;
+    }
+
+    // Get train by ID
+    public Train getTrainById(Integer id) {
+        return trainRepository.findById(id).get();
+    }
+
+    // Update Train
+    public Train updateTrain(Integer id, Train train) {
+
+        Train existingTrain = trainRepository.findById(id).orElse(null);
+
+        if (existingTrain != null) {
+
+            existingTrain.setTrainName(train.getTrainName());
+            existingTrain.setTrainNumber(train.getTrainNumber());
+            existingTrain.setSource(train.getSource());
+            existingTrain.setDestination(train.getDestination());
+            existingTrain.setTotal_Seats(train.getTotal_Seats());
+            existingTrain.setAvailable_Seats(train.getAvailable_Seats());
+
+            return trainRepository.save(existingTrain);
+        }
+
+        return null;
+    }
+
+    // Delete Train
+    public void deleteTrain(Integer id) {
+        trainRepository.deleteById(id);
+    }
+    
+    
+    // find by source and destination
+    public List<Train> findBySourceAndDestiny(){
+    	System.out.print("From:");
+    	String source = scanner.next();
+    	System.out.print("To:");
+    	String destination = scanner.next();
+    	
+    	// JPA method findBySourceAndDestination(source, destination)
+    	List<Train> bySourceAndDestination = trainRepository.findBySourceAndDestination(source, destination);
+    	System.out.println(" Available Trains ");
+    	System.out.println(" ========================");
+    	for (Train train : bySourceAndDestination) {
+			System.out.println(train.toString());
+		}
+    	return bySourceAndDestination;
+    }
+
+    
+    public Train updateAvailableSeat(Integer id, int noOfPassenger ) {
+  	  Train train = trainRepository.findById(id).get();
+  	  
+  	  int available_Seats = train.getAvailable_Seats();
+  	 
+  	  available_Seats = available_Seats-noOfPassenger;
+  	  System.out.println(available_Seats);
+  	  train.setAvailable_Seats(available_Seats);
+  	  
+  	  trainRepository.save(train);
+  	return train;
+  	  
+      }
+
+
+}
