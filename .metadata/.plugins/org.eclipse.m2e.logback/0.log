@@ -21758,3 +21758,29 @@ Caused by: com.google.inject.OutOfScopeException: Cannot access Key[type=org.apa
 2026-10-03 10:03:00,201 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2026-10-03 10:03:00,209 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2026-10-03 10:03:00,212 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\admin\SPRINGBOOT_WORKSPACE\02_TicketBookingApplication\src\test\resources
+2026-10-03 10:21:45,649 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2026-10-03 10:21:45,657 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2026-10-03 10:21:45,662 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\admin\SPRINGBOOT_WORKSPACE\02_TicketBookingApplication\src\test\resources
+2026-10-03 10:21:50,387 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2026-10-03 10:21:50,395 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2026-10-03 10:21:50,399 [Worker-39: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\admin\SPRINGBOOT_WORKSPACE\02_TicketBookingApplication\src\test\resources
+2026-10-03 10:21:53,952 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2026-10-03 10:21:53,958 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2026-10-03 10:21:53,963 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\admin\SPRINGBOOT_WORKSPACE\02_TicketBookingApplication\src\test\resources
+2026-10-03 10:22:06,833 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2026-10-03 10:22:06,844 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2026-10-03 10:22:06,847 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\admin\SPRINGBOOT_WORKSPACE\02_TicketBookingApplication\src\test\resources
+2026-10-03 10:22:09,296 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2026-10-03 10:22:09,303 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2026-10-03 10:22:09,307 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\admin\SPRINGBOOT_WORKSPACE\02_TicketBookingApplication\src\test\resources
+2026-10-03 10:23:57,689 [Worker-43: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.helloWorld:TicketBookingApplication:0.0.1-SNAPSHOT @ C:\Users\admin\SPRINGBOOT_WORKSPACE\02_TicketBookingApplication\pom.xml.
+2026-10-03 10:23:58,507 [Worker-43: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - The artifact mysql:mysql-connector-java:jar:8.0.31 has been relocated to com.mysql:mysql-connector-j:jar:8.0.31: MySQL Connector/J artifacts moved to reverse-DNS compliant Maven 2+ coordinates.
+2026-10-03 10:23:59,919 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2026-10-03 10:23:59,967 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2026-10-03 10:23:59,975 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\admin\SPRINGBOOT_WORKSPACE\02_TicketBookingApplication\src\test\resources
+2026-10-03 10:24:02,486 [Worker-38: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - The artifact mysql:mysql-connector-java:jar:8.0.31 has been relocated to com.mysql:mysql-connector-j:jar:8.0.31: MySQL Connector/J artifacts moved to reverse-DNS compliant Maven 2+ coordinates.
+2026-10-03 10:24:02,828 [Worker-39: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.helloWorld:TicketBookingApplication:0.0.1-SNAPSHOT @ C:\Users\admin\SPRINGBOOT_WORKSPACE\02_TicketBookingApplication\pom.xml.
+2026-10-03 10:24:03,024 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2026-10-03 10:24:03,061 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2026-10-03 10:24:03,074 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\admin\SPRINGBOOT_WORKSPACE\02_TicketBookingApplication\src\test\resources
+2026-10-03 10:24:03,697 [Worker-39: Updating Maven Dependencies] WARN  o.e.m.c.i.embedder.EclipseLogger - The artifact mysql:mysql-connector-java:jar:8.0.31 has been relocated to com.mysql:mysql-connector-j:jar:8.0.31: MySQL Connector/J artifacts moved to reverse-DNS compliant Maven 2+ coordinates.

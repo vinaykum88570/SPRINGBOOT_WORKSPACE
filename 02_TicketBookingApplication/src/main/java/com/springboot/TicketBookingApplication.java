@@ -32,6 +32,8 @@ public class TicketBookingApplication implements CommandLineRunner {
 		obj.setTravelDate(new Date());
 		ticketService.createTicket(obj);
 		
+		System.out.println("Hello");
+		
 	}
 
 }
