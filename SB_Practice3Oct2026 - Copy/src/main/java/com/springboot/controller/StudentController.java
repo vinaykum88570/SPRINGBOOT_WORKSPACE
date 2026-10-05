@@ -17,7 +17,6 @@ import com.springboot.service.StudentService;
 @RequestMapping("/stu")
 public class StudentController {
 
-	@Autowired
 	private final StudentRepository studentRepository;
 	@Autowired
     private StudentService studentService;
