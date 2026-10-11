@@ -4,10 +4,20 @@ import org.yaml.snakeyaml.events.Event.ID;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name="stu")
+
+@NamedQueries(value={
+		 
+		@NamedQuery(name="Student.getStudent",
+				  query="select s from Student s where s.id=?1")
+})
+	
+
 public class Student {
 
 	@Id

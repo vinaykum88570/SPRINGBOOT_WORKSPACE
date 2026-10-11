@@ -9,4 +9,6 @@ import com.springboot.entity.Student;
 public interface StudentRepository extends CrudRepository<Student, Integer>{
 	
 	
+	public Student getStudent(Integer id);
+	
 }

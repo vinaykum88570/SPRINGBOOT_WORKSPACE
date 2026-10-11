@@ -14,12 +14,13 @@ public class StudentService {
 
 	@Autowired
 	private StudentRepository studentRepository;
-	
-	// Find By ID
-	public Student getStudent(Integer id) {
-		return studentRepository.findById(id).get();
-		
-	}
+
+//	
+//	// Find By ID
+//	public Student getStudent(Integer id) {
+//		return studentRepository.findById(id).get();
+//		
+//	}
 
 	// Find By All 
 	public Iterable<Student> getAllStu(){
@@ -42,5 +43,9 @@ public class StudentService {
 			Student student = studentRepository.findById(id).get();
 			student.setName(name);
 			studentRepository.save(student);
+	}
+	
+	public Student getStudent(Integer id) {
+		return studentRepository.getStudent(id);
 	}
 }
