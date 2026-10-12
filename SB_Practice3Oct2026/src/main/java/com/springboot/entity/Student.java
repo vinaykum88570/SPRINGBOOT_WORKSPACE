@@ -14,7 +14,9 @@ import jakarta.persistence.Table;
 @NamedQueries(value={
 		 
 		@NamedQuery(name="Student.getStudent",
-				  query="select s from Student s where s.id=?1")
+				  query="select s from Student s where s.id=?1"),
+		
+		
 })
 	
 

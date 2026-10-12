@@ -45,7 +45,9 @@ public class StudentService {
 			studentRepository.save(student);
 	}
 	
+	// Using Named Query
 	public Student getStudent(Integer id) {
 		return studentRepository.getStudent(id);
 	}
+	
 }
