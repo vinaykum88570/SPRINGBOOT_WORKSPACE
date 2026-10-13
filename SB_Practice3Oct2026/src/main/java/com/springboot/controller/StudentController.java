@@ -4,7 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,6 +26,20 @@ public class StudentController {
 
 	StudentController(StudentRepository studentRepository) {
 		this.studentRepository = studentRepository;
+	}
+	
+	//localhost:8080/stu/add/student
+	@PostMapping("/add/student")
+	public Student addStudent(@RequestBody Student student) {
+		return studentService.addStudent(student);
+	}
+	
+	//
+	@GetMapping("/get")
+	public Student getStudentByName(@RequestParam String name) {
+		Student student = studentService.getStudentByName(name);
+		System.out.println(student.toString());
+		return student;
 	}
 	
     //	http://localhost:8080/stu/get/3

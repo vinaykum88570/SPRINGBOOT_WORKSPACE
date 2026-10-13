@@ -2,6 +2,7 @@ package com.springboot.repository;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import com.springboot.entity.Student;
 
 @Repository
-public interface StudentRepository extends CrudRepository<Student, Integer>{
+public interface StudentRepository extends JpaRepository<Student, Integer>{
 	
 	
 	public Student getStudent(Integer id);
@@ -24,6 +25,9 @@ public interface StudentRepository extends CrudRepository<Student, Integer>{
 	// Native Query
 	@Query(value="select * from stu", nativeQuery = true)
 	public List<Student> getAllStudent();
+
+	// 
+	public Student findByName(String name);
 	
 	
 }

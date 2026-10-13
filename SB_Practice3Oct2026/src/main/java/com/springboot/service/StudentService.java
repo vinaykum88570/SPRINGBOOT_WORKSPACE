@@ -49,5 +49,15 @@ public class StudentService {
 	public Student getStudent(Integer id) {
 		return studentRepository.getStudent(id);
 	}
+
+	// add Student
+	public Student addStudent(Student student) {
+		return studentRepository.save(student);
+	}
+
+	// uSing @RequestParam
+	public Student getStudentByName(String name) {
+	    return studentRepository.findByName(name);
+	}
 	
 }

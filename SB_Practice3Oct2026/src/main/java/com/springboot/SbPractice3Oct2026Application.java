@@ -37,10 +37,10 @@ public class SbPractice3Oct2026Application implements CommandLineRunner {
 //			System.out.println(student);
 //		}
 		
-		List<Student> allStudent = studentRepository.getAllStudent();
-		for (Student student : allStudent) {
-			System.out.println(student);
-		}
+//		List<Student> allStudent = studentRepository.getAllStudent();
+//		for (Student student : allStudent) {
+//			System.out.println(student);
+//		}
 	}
 
 	public void getStudent(Integer id) {
