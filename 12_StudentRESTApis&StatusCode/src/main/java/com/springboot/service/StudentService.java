@@ -37,5 +37,33 @@ public class StudentService {
 		return listOfStudents;
 	}
 
+	public Student updateStudent(Long id, Student studentReq) {
+		Optional<Student> existingStudent = studentRepository.findById(id);
+		
+		if(existingStudent.isEmpty()) {
+			return null;
+		}
+		
+		Student studentToSave = existingStudent.get();
+		studentToSave.setName(studentReq.getName());
+		studentToSave.setRollNo(studentReq.getRollNo());
+		studentToSave.setSubject(studentReq.getSubject());
+		studentToSave.setEmail(studentReq.getEmail());
+		studentToSave.setAge(studentReq.getAge());
+		return studentRepository.save(studentToSave);
+	}
+
+	public Boolean deleteStudent(Long id) {
+		Boolean isStudent = studentRepository.existsById(id);
+		
+			if(!isStudent) {
+				return false;
+			}
+			
+			 studentRepository.deleteById(id);
+		
+		return true;
+	}
+
 	
 }
