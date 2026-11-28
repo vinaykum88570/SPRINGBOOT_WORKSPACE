@@ -26,6 +26,7 @@ public class Ticket  {
 	
 	
 	
+	
 	@Override
 	public String toString() {
 		return "Ticket [ticket_id=" + ticket_id + ", designation_station=" + designation_station + ", email=" + email
@@ -57,7 +58,7 @@ public class Ticket  {
 		this.travel_date = travel_date;
 	}
 
-
+	
 	public Integer getTicket_id() {
 		return ticket_id;
 	}

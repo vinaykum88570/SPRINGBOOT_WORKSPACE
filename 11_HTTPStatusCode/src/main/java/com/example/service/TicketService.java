@@ -16,8 +16,9 @@ public class TicketService {
 	private TicketRepository repository;
 
 	public Ticket createTicket(Ticket ticket) {
-		
-		return repository.save(ticket);
+	
+		Ticket studentResp = repository.save(ticket);
+		return studentResp;
 	}
 
 	public Ticket getTicket(Integer id) {
@@ -39,4 +40,6 @@ public class TicketService {
 		 List <Ticket> all = repository.findAll();
 		 return all;
 	}
+	
+	
 }
