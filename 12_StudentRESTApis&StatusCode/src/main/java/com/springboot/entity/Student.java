@@ -2,8 +2,10 @@ package com.springboot.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name="student")
 public class Student {
 
 	@Id
@@ -13,6 +15,9 @@ public class Student {
 	private String email;
 	private int rollNo;
 	private String subject;
+
+	
+	
 	
 	
 	public Long getId() {
