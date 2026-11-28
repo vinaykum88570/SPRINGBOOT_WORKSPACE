@@ -60,6 +60,9 @@ public class TicketController {
     	return ResponseEntity.of(Optional.of(list));
     }
 	
+	// Soft Delete 
+	
+	
 	
 
 }
