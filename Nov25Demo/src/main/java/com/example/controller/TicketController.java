@@ -41,6 +41,11 @@ public class TicketController {
 		service.deleteID(id);
 	}
 	
-
+	@GetMapping("/getAll")
+    public Iterable<Ticket> getAllTickets(){
+    	return service.getAllTicket();
+    }
+	
+	
 
 }

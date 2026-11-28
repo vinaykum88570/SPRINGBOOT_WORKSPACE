@@ -34,4 +34,8 @@ public class TicketService {
 	public void deleteID(Integer id) {
 	 repository.deleteById(id);
 	}
+
+	public Iterable<Ticket> getAllTicket() {
+		return repository.findAll();
+	}
 }
